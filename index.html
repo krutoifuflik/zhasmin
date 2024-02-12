@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>День Святого Валентина</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+    
+    .valentine-img {
+      position: absolute;
+      top: 7%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 300px;
+      z-index: 1; /* Поместить изображение над текстом */
+      
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .btn-no {
+      display: none; /* Скрыть кнопку "Нет" изначально */
+    }
+    .message {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .btn-yes {
+      font-size: 24px; /* Увеличение размера шрифта */
+      padding: 30px 60px; /* Увеличение размеров кнопки */
+      background-color: green; /* Зеленый цвет фона */
+      border-color: green; /* Зеленый цвет рамки */
+    }
+    .btn-no {
+      font-size: 18px; /* Уменьшение размера шрифта */
+      padding: 10px 20px; /* Уменьшение размеров кнопки */
+      background-color: red; /* Красный цвет фона */
+      border-color: red; /* Красный цвет рамки */
+    }
+    
+  </style>
+</head>
+<body>
+    
+  <img src="bebebe.jpg" alt="Valentine" class="valentine-img">
+
+  <div class="container text-center">
+    <h1 class="mt-5 mb-4">zhasmin 14 feb che del?😊😊😊</h1>
+    <button id="btn-yes" class="btn btn-success btn-lg">gulyaem vmeste)</button>
+    <button id="btn-no" class="btn btn-danger btn-sm">doma</button>
+    <div class="message"></div>
+  </div>
+  
+
+  <!-- Подключение Bootstrap JS и jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+   $(document).ready(function() {
+      var messages = [
+          "u sure?😞",
+          "maybe one more time...😓",
+          "try again))😫😫?",
+          "ladno esli net tak net😭😭...",
+          "ne rabotaet daaaaa)😏😏😏",
+          "ya plachuuu.😭😭😭..",
+          "ok😔😔😔"
+      ];
+
+      $('#btn-yes').click(function() {
+        window.location.href = "next-page.html"; // Замените "next-page.html" на URL следующей страницы
+      });
+
+      $('#btn-no').click(function() {
+        var randomIndex = Math.floor(Math.random() * messages.length);
+        $('.message').text(messages[randomIndex]).fadeIn(); // Отобразить случайное сообщение
+      });
+    });
+  </script>
+</body>
+</html>
